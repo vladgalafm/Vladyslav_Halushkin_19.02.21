@@ -1,0 +1,178 @@
+.modal {
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.3;
+    background-color: rgba(51, 51, 51, 0.6);
+    opacity: 0;
+    transition: 0.3s opacity linear;
+}
+
+.modal--fade-in {
+    opacity: 1;
+}
+.modal--hidden {
+    z-index: -1;
+}
+
+.modal__window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 20px 30px;
+    width: 95%;
+    max-width: 700px;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 6px 25px 0 rgba(0, 0, 0, 0.5);
+}
+
+.modal__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.modal__close::before,
+.modal__close::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 30px;
+    height: 6px;
+    background-color: #666666;
+}
+.modal__close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal__inner {
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 320px;
+    width: 100%;
+    overflow: auto;
+}
+
+.modal__main-info {
+    padding-bottom: calc((10 / 14) * 1em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__main-left {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.modal__film-year {
+    position: relative;
+    padding: 5px 0 5px 50px;
+    font-size: 1.4em;
+    line-height: 2;
+    text-align: right;
+    font-style: italic;
+}
+
+.modal__star {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+}
+
+.modal__star--fav .star-icon polygon {
+    fill: #ffff11;
+}
+
+.modal__film-name {
+    padding-bottom: 0.5em;
+    font-size: 1.4em;
+}
+
+.modal__film-genres {
+    padding: calc((5 / 14) * 1em) 0;
+    font-style: italic;
+}
+
+.modal__extra-info > p {
+    padding: calc((5 / 14) * 1em) 0;
+    display: flex;
+}
+
+.modal__extra-info > p > span:first-of-type {
+    padding-right: calc((5 / 14) * 1em);
+    flex-shrink: 0;
+}
+
+.modal__extra-info > p > span:nth-of-type(2) {
+    font-style: italic;
+}
+
+@media screen and (min-width: 480px) {
+    .modal {
+        font-size: 16px;
+    }
+    .modal__window {
+        padding: 50px 30px 30px;
+    }
+    .modal__inner {
+        max-width: 100%;
+    }
+    .modal__main-info {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .modal__main-left,
+    .modal__film-genres {
+        margin: 0 20px 0 0;
+        width: 35%;
+        flex-shrink: 0;
+    }
+    .modal__film-year {
+        font-size: 1.2em;
+    }
+    .modal__film-name {
+        padding-bottom: 0.8em;
+    }
+    .modal__add-info {
+        display: flex;
+        align-items: stretch;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        font-size: 18px;
+    }
+    .modal__window {
+        padding: 60px 40px 40px;
+    }
+    .modal__close {
+        width: 60px;
+        height: 60px;
+    }
+    .modal__close::before,
+    .modal__close::after {
+        width: 40px;
+        height: 8px;
+    }
+    .modal__main-left,
+    .modal__film-genres {
+        margin-right: 40px;
+    }
+}

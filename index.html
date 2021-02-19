@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movies Gallery</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/fav.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+<main class="page">
+
+    <div class="loader js-loader">
+        <div class="loader__spinner">
+            <div class="loader__spinner-inner">
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="gallery">
+        <h1 class="gallery__title">
+            Movies Gallery
+        </h1>
+        <div class="gallery__view-options">
+            <select class="gallery__genre-select js-genre-select">
+                <option value="-" selected>Select genre</option>
+            </select>
+            <div class="gallery__layout-select">
+                <span class="gallery__layout-select-label">view as</span>
+                <button class="gallery__view-type gallery__view-type--active js-gal-type js-gal-type-card"
+                        aria-label="View movies gallery as cards list" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="gallery__view-type gallery__view-type--list js-gal-type"
+                        aria-label="View movies with more details">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <ul class="gallery__list gallery__list--cards js-gallery-list"></ul>
+    </section>
+
+    <section class="fav js-fav">
+        <div class="fav__topper">
+            <button class="fav__trigger js-fav-trigger" aria-label="Show favorite movies">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fav__content js-fav-content">
+            <h2 class="fav__title">
+                Favorite List
+            </h2>
+            <ul class="fav__list js-fav-list"></ul>
+        </div>
+    </section>
+
+    <section class="modal modal--hidden js-modal">
+        <div class="modal__window">
+            <button class="modal__close js-close-modal" aria-label="Hide film details"></button>
+            <div class="modal__inner js-modal-content"></div>
+        </div>
+    </section>
+
+</main>
+
+<script src="js/gallery.js"></script>
+</body>
+</html>
